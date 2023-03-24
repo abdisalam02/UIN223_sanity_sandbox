@@ -14,7 +14,11 @@ export default{
             title:'URL-tittel',
             options: {
                 source:'product_title',
-                slugify: input => input.toLowerCase().replace((/\s+/g,/[^\w-]+/g, '-')).slice(0, 150)
+                // slugify: input => input.toLowerCase().replace((/\s+/g,/[^\w-]+/g, '-')).slice(0, 200)
+                slugify: input => input.toLowerCase().replace(/[^\w-]+/g, '').slice(0, 200)
+                // slugify: ({current, basePath, slugify}) => slugify(current.title.toLowerCase())
+
+
             }
 
 
